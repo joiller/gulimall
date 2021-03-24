@@ -1,0 +1,26 @@
+server:
+  port: 9040
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: <access-key>
+      secret-key: <secret-key>
+      oss:
+        endpoint: oss-cn-shanghai.aliyuncs.com
+  application:
+    name: gulimall-product
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/gulimall_pms?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password:
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      logic-delete-field: show-status
