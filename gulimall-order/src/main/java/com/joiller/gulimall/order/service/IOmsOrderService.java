@@ -2,8 +2,7 @@ package com.joiller.gulimall.order.service;
 
 import com.joiller.gulimall.order.entity.OmsOrder;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.springframework.stereotype.Component;
-import utils.R;
+import com.joiller.gulimall.common.utils.R;
 
 /**
  * <p>

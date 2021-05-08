@@ -18,6 +18,26 @@ spring:
             - Path=/api/product/**
           filters:
             - RewritePath=/api(?<segment>/?.*), /$\{segment}
+        - id: gulimall-ware
+          uri: lb://gulimall-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), /$\{segment}
+
+        - id: third-party
+          uri: lb://third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty(?<segment>/?.*), /$\{segment}
+
+        - id: gulimall-member
+          uri: lb://gulimall-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), /$\{segment}
 
         - id: renren-generator
           uri: lb://renren-generator

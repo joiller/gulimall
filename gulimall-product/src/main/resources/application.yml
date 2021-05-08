@@ -1,5 +1,8 @@
 server:
   port: 9040
+  error:
+    include-message: always
+    include-exception: true
 spring:
   cloud:
     nacos:
@@ -18,6 +21,8 @@ spring:
     url: jdbc:mysql://localhost:3306/gulimall_pms?useUnicode=true&useSSL=false&characterEncoding=utf8
     username: root
     password:
+  jackson:
+    date-format: yyyy-MM-dd
 mybatis-plus:
   global-config:
     db-config:

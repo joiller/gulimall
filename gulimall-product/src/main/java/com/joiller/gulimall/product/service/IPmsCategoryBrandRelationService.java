@@ -1,7 +1,10 @@
 package com.joiller.gulimall.product.service;
 
+import com.joiller.gulimall.product.entity.PmsCategory;
 import com.joiller.gulimall.product.entity.PmsCategoryBrandRelation;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IPmsCategoryBrandRelationService extends IService<PmsCategoryBrandRelation> {
 
+    Boolean saveDetail(PmsCategoryBrandRelation categoryBrandRelation);
+
+    boolean updateCategory(PmsCategory category);
+
+    List<PmsCategoryBrandRelation> listByCatId(Long catId);
 }

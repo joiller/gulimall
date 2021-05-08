@@ -1,7 +1,9 @@
 package com.joiller.gulimall.product.service;
 
-import com.joiller.gulimall.product.entity.PmsAttrAttrgroupRelation;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.joiller.gulimall.product.entity.PmsAttrAttrgroupRelation;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +15,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IPmsAttrAttrgroupRelationService extends IService<PmsAttrAttrgroupRelation> {
 
+    boolean saveOrUpdateByAttr(Long attrId, Long attrGroupId);
+
+    List<Long> listAttrIdsByGroupId(Long attrGroupId);
+
+    boolean removeBatchRelations(PmsAttrAttrgroupRelation[] relations);
+
+    boolean saveBatchRelations(List<PmsAttrAttrgroupRelation> relations);
 }

@@ -2,4 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.joiller.gulimall.ware.mapper.WmsPurchaseDetailMapper">
 
+    <select id="listByPurchaseIds" resultType="com.joiller.gulimall.ware.entity.WmsPurchaseDetail">
+        SELECT * FROM wms_purchase_detail
+        WHERE purchase_id IN
+        <foreach collection="purchase_ids" item="purchase_id" separator=" , " open="(" close=")">
+            #{purchase_id}
+        </foreach>
+    </select>
 </mapper>

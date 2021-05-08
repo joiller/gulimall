@@ -2,7 +2,7 @@ package com.joiller.gulimall.member.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
-import utils.R;
+import com.joiller.gulimall.common.utils.R;
 
 /**
  * @author jianghuilai

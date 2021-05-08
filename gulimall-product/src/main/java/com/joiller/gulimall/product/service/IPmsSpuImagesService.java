@@ -3,6 +3,8 @@ package com.joiller.gulimall.product.service;
 import com.joiller.gulimall.product.entity.PmsSpuImages;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  * spu图片 服务类
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IPmsSpuImagesService extends IService<PmsSpuImages> {
 
+    boolean save(Long id, List<String> images);
 }

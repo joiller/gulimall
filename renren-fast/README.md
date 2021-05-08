@@ -27,11 +27,11 @@ renren-fast
 │
 ├─common 公共模块
 │  ├─aspect 系统日志
-│  ├─exception 异常处理
+│  ├─com.joiller.gulimall.common.exception 异常处理
 │  ├─validator 后台校验
 │  └─xss XSS过滤
 │ 
-├─config 配置信息
+├─com.joiller.gulimall.common.config 配置信息
 │ 
 ├─modules 功能模块
 │  ├─app API接口模块(APP调用)

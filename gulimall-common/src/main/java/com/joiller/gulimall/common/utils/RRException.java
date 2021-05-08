@@ -1,4 +1,4 @@
-package utils;
+package com.joiller.gulimall.common.utils;
 
 /**
  * 自定义异常

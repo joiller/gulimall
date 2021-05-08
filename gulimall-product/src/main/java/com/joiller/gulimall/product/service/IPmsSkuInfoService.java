@@ -1,7 +1,10 @@
 package com.joiller.gulimall.product.service;
 
-import com.joiller.gulimall.product.entity.PmsSkuInfo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.joiller.gulimall.product.entity.PmsSkuInfo;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IPmsSkuInfoService extends IService<PmsSkuInfo> {
 
+    Page<PmsSkuInfo> queryPage(Page<PmsSkuInfo> skuInfoPage, Map<String, String> params);
 }

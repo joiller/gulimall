@@ -1,7 +1,10 @@
 package com.joiller.gulimall.member.service;
 
-import com.joiller.gulimall.member.entity.UmsMemberLevel;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.joiller.gulimall.member.entity.UmsMemberLevel;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUmsMemberLevelService extends IService<UmsMemberLevel> {
 
+    Page<UmsMemberLevel> page(Map<String, String> params);
 }

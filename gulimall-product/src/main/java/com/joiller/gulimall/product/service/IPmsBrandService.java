@@ -1,7 +1,10 @@
 package com.joiller.gulimall.product.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.joiller.gulimall.product.entity.PmsBrand;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -13,4 +16,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IPmsBrandService extends IService<PmsBrand> {
 
+    boolean updateDetail(PmsBrand brand);
+
+    Page<PmsBrand> page(Map<String, String> params);
 }

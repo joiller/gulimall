@@ -1,4 +1,6 @@
-package utils;
+package com.joiller.gulimall.common.utils;
+
+import com.joiller.gulimall.common.exception.BizCodeEnum;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +31,13 @@ public class R extends HashMap<String, Object> {
 		R r = new R();
 		r.put("code", code);
 		r.put("msg", msg);
+		return r;
+	}
+
+	public static R error(BizCodeEnum bizCode){
+		R r = new R();
+		r.put("code", bizCode.getCode());
+		r.put("msg", bizCode.getMessage());
 		return r;
 	}
 

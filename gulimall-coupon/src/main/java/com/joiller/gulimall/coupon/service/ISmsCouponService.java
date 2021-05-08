@@ -2,7 +2,7 @@ package com.joiller.gulimall.coupon.service;
 
 import com.joiller.gulimall.coupon.entity.SmsCoupon;
 import com.baomidou.mybatisplus.extension.service.IService;
-import utils.R;
+import com.joiller.gulimall.common.utils.R;
 
 /**
  * <p>

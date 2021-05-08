@@ -1,15 +1,13 @@
 package com.joiller.gulimall.coupon.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.segments.MergeSegments;
 import com.joiller.gulimall.coupon.entity.SmsCoupon;
 import com.joiller.gulimall.coupon.mapper.SmsCouponMapper;
 import com.joiller.gulimall.coupon.service.ISmsCouponService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import utils.R;
+import com.joiller.gulimall.common.utils.R;
 
 import java.util.List;
 

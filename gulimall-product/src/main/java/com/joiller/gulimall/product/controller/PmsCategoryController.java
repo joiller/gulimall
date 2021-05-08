@@ -6,9 +6,10 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.joiller.gulimall.product.entity.PmsCategory;
 import com.joiller.gulimall.product.service.IPmsCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import utils.R;
+import com.joiller.gulimall.common.utils.R;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ import java.util.List;
  * @since 2021-02-22
  */
 @RestController
-@RequestMapping("/product/pms-category")
+@RequestMapping("/product/category")
 public class PmsCategoryController {
     @Autowired
     private IPmsCategoryService pmsCategoryService;
@@ -51,6 +52,7 @@ public class PmsCategoryController {
         return R.error(400, "existed");
     }
 
+    @Transactional
     @PutMapping("update")
     public R update(@RequestBody PmsCategory category){
         // 是否存在其他同名的数据
@@ -58,7 +60,9 @@ public class PmsCategoryController {
         queryWrapper.clear();
         queryWrapper.eq("name", category.getName())
                 .ne("cat_id", category.getCatId());
+        System.out.println("here one ******");
         PmsCategory one = pmsCategoryService.getOne(queryWrapper);
+        System.out.println("here two ******");
 
         if (null!=one){
             return R.error(400, "existed");
@@ -67,8 +71,8 @@ public class PmsCategoryController {
         UpdateWrapper<PmsCategory> updateWrapper = new UpdateWrapper<>(category);
         updateWrapper.clear();
         updateWrapper.eq("cat_id", category.getCatId());
-        boolean update = pmsCategoryService.update(category, updateWrapper);
-        return R.ok().put("updated", update);
+        pmsCategoryService.updateDetail(category, updateWrapper);
+        return R.ok().put("updated", true);
     }
 
     @PutMapping("updateBatch")

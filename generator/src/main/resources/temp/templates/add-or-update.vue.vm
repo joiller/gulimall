@@ -71,8 +71,8 @@
       },
       // 表单提交
       dataFormSubmit () {
-        #[[this.$refs['dataForm'].validate((valid) => {]]#
-          if (valid) {
+        #[[this.$refs['dataForm'].validate((com.joiller.gulimall.common.valid) => {]]#
+          if (com.joiller.gulimall.common.valid) {
             this.$http({
               url: #[[this.$http.adornUrl]]#(`/${moduleName}/${pathName}/${!this.dataForm.${pk.attrname} ? 'save' : 'update'}`),
               method: 'post',

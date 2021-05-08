@@ -2,4 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.joiller.gulimall.product.mapper.PmsCategoryBrandRelationMapper">
 
+    <update id="updateCategory">
+        update `pms_category_brand_relation` set catelog_name=#{name} where catelog_id=#{catId}
+    </update>
 </mapper>

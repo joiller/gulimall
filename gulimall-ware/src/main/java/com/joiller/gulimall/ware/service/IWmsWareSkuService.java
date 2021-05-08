@@ -1,7 +1,10 @@
 package com.joiller.gulimall.ware.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.joiller.gulimall.ware.entity.WmsWareSku;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -13,4 +16,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IWmsWareSkuService extends IService<WmsWareSku> {
 
+    Page<WmsWareSku> page(Page<WmsWareSku> wareSkuPage, Map<String, String> map);
+
+    boolean addStock(Long skuId, Long wareId, Integer skuNum);
 }

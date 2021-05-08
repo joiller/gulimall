@@ -2,6 +2,9 @@ package com.joiller.gulimall.product.service;
 
 import com.joiller.gulimall.product.entity.PmsProductAttrValue;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.joiller.gulimall.product.vo.BaseAttrs;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IPmsProductAttrValueService extends IService<PmsProductAttrValue> {
 
+    boolean save(Long id, List<BaseAttrs> baseAttrs);
+
+    List<PmsProductAttrValue> listForSpu(Long spuId);
+
+    boolean updateForSpu(Long spuId, List<PmsProductAttrValue> productAttrValues);
 }

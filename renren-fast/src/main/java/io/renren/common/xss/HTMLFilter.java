@@ -83,7 +83,7 @@ public final class HTMLFilter {
     private final String[] vNeedClosingTags;
     /** set of disallowed html elements **/
     private final String[] vDisallowed;
-    /** attributes which should be checked for valid protocols **/
+    /** attributes which should be checked for com.joiller.gulimall.common.valid protocols **/
     private final String[] vProtocolAtts;
     /** allowed protocols **/
     private final String[] vAllowedProtocols;
@@ -207,7 +207,7 @@ public final class HTMLFilter {
      * html.
      *
      * @param input text (i.e. submitted by a user) than may contain html
-     * @return "clean" version of input, with only valid, whitelisted html elements allowed
+     * @return "clean" version of input, with only com.joiller.gulimall.common.valid, whitelisted html elements allowed
      */
     public String filter(final String input) {
         reset();

@@ -2,6 +2,7 @@ package com.joiller.gulimall.product.mapper;
 
 import com.joiller.gulimall.product.entity.PmsAttrAttrgroupRelation;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface PmsAttrAttrgroupRelationMapper extends BaseMapper<PmsAttrAttrgroupRelation> {
 
+    boolean deleteBatchRelations(@Param("relations") PmsAttrAttrgroupRelation[] relations);
 }

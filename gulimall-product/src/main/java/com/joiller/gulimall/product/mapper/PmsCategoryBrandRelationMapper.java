@@ -1,5 +1,6 @@
 package com.joiller.gulimall.product.mapper;
 
+import com.joiller.gulimall.product.entity.PmsCategory;
 import com.joiller.gulimall.product.entity.PmsCategoryBrandRelation;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface PmsCategoryBrandRelationMapper extends BaseMapper<PmsCategoryBrandRelation> {
 
+    Boolean updateCategory(PmsCategory category);
 }

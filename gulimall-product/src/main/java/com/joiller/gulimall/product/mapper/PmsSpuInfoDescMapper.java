@@ -1,7 +1,7 @@
 package com.joiller.gulimall.product.mapper;
 
-import com.joiller.gulimall.product.entity.PmsSpuInfoDesc;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.joiller.gulimall.product.entity.PmsSpuInfoDesc;
 
 /**
  * <p>

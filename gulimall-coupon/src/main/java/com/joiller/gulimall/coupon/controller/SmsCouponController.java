@@ -1,13 +1,12 @@
 package com.joiller.gulimall.coupon.controller;
 
 
+import com.joiller.gulimall.common.utils.R;
 import com.joiller.gulimall.coupon.service.ISmsCouponService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RestController;
-import utils.R;
 
 /**
  * <p>
@@ -28,5 +27,6 @@ public class SmsCouponController {
     public R list(){
         return smsCouponService.lista();
     }
+
 }
 

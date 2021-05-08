@@ -1,16 +1,20 @@
-package config;
+package com.joiller.gulimall.ware.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @author jianghuilai
  * @since 2021-03-21 11:27
  **/
 
+@MapperScan("com.joiller.gulimall.ware.mapper")
+@EnableTransactionManagement
 @Configuration
 public class MybatisPlusConfig {
 

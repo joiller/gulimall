@@ -1,12 +1,18 @@
 package com.joiller.gulimall.product.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.joiller.gulimall.product.entity.PmsCategory;
 import com.joiller.gulimall.product.mapper.PmsCategoryMapper;
+import com.joiller.gulimall.product.service.IPmsCategoryBrandRelationService;
 import com.joiller.gulimall.product.service.IPmsCategoryService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.mysql.cj.util.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,6 +26,8 @@ import java.util.stream.Collectors;
  */
 @Service
 public class PmsCategoryServiceImpl extends ServiceImpl<PmsCategoryMapper, PmsCategory> implements IPmsCategoryService {
+    @Autowired
+    IPmsCategoryBrandRelationService relationService;
 
     @Override
     public List<PmsCategory> listAsTree() {
@@ -33,6 +41,29 @@ public class PmsCategoryServiceImpl extends ServiceImpl<PmsCategoryMapper, PmsCa
                 .sorted(Comparator.comparingInt(PmsCategory::getSort))
                 .collect(Collectors.toList());
         return collect;
+    }
+
+    @Override
+    public List<Serializable> getPath(Serializable id) {
+        return getPath(id, new LinkedList<>());
+    }
+
+    @Override
+    public boolean updateDetail(PmsCategory category, UpdateWrapper<PmsCategory> updateWrapper) {
+        this.update(category, updateWrapper);
+        if (!StringUtils.isNullOrEmpty(category.getName())){
+            return relationService.updateCategory(category);
+        }
+        return true;
+    }
+
+    private List<Serializable> getPath(Serializable id, LinkedList<Serializable> path){
+        path.addFirst(id);
+        PmsCategory temp = this.getById(id);
+        if (temp.getParentCid()==0){
+            return path;
+        }
+        return getPath(temp.getParentCid(), path);
     }
 
     public List<PmsCategory> setChildren(PmsCategory temp, List<PmsCategory> all){

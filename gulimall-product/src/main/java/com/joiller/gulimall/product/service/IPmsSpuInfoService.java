@@ -2,6 +2,7 @@ package com.joiller.gulimall.product.service;
 
 import com.joiller.gulimall.product.entity.PmsSpuInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.joiller.gulimall.product.vo.SpuSaveVo;
 
 /**
  * <p>
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IPmsSpuInfoService extends IService<PmsSpuInfo> {
 
+    boolean saveSpuSaveVo(SpuSaveVo spuSaveVo);
 }
